@@ -25,7 +25,7 @@
 
 ```bash
 # 1. profile 的 package.json 加依赖
-#    "dsh-sync-panel": "link:~/Documents/dsh-workspace/link-plugins/dsh-sync-panel"
+#    "dsh-sync-panel": "link:/absolute/path/to/dsh-workspace/link-plugins/dsh-sync-panel"
 
 # 2. 建目录联接（Windows 上 ln -s 需要开发者模式，junction 不需要）
 cmd //c "mklink /J C:\Users\<你>\.dsh\profiles\desktop\node_modules\dsh-sync-panel E:\工作空间\DSH工作台改造\dsh-sync-panel"
