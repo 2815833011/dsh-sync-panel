@@ -227,3 +227,8 @@ dsh-sync-panel/        面板：日常的看改了什么、勾选、推送、拉
 
 **没做的**：面板不碰会话文件。会话 24MB 且变化频繁，进 git 只会把仓库撑爆。
 会话的跨机器合并仍走 `dsh-sync/bin/apply.cjs --sessions`。
+
+## 兼容性 / Compatibility
+
+- dsh **0.2.2-rc.5**：`scripts.test` 由 `node --test test/`（Node 24 会报 `Cannot find module 'test'`）改为显式 glob `node --test "test/*.test.mjs"`；新增 `test/script.test.mjs` 守卫脚本取值并实跑全套（152 例）。
+  显式 glob 是必要的：目录形式会把 `test/e2e-manual.mjs`、`test/e2e-real-repo.mjs` 这类手动脚本收进来，必然失败。
